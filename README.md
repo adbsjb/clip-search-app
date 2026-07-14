@@ -1,11 +1,11 @@
-# Bit Search
+# Clip Search
 
 A small self-hosted web app for searching clip metadata and embedded subtitles, playing a specific clip in the browser, and exporting a cached GIF.
 
 ## Run locally
 
 ```bash
-cd /home/alex/bit-search-app
+cd /home/alex/clip-search-app
 python3 -m pip install -r requirements.txt
 python3 app.py
 ```
@@ -22,7 +22,7 @@ On your server, from the project directory:
 docker compose up -d --build
 ```
 
-Then browse to http://<your-server>:8001/.
+Then browse to http://\<your-server\>:8001/.
 
 ## Data layout
 
