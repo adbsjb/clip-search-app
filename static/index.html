@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clip Search</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/8.20.4/video-js.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <h1>Search for a clip</h1>
+        <p>Type a phrase from an indexed TV Show to pull up the exact clip.</p>
+        <input id="search" placeholder="Whatever you want, it's your day, man." autocomplete="off" />
+        <ul id="suggestions"></ul>
+      </section>
+
+      <section class="player-card">
+        <div id="clip-meta">
+          <h2>Select a clip</h2>
+          <p>Once you choose a result, the clip will appear here.</p>
+        </div>
+        <video id="player" class="video-js vjs-default-skin hidden" preload="metadata" data-setup='{"controls": false}'></video>
+        <img id="preview-image" class="preview-image hidden" alt="Clip preview" />
+        <!-- Video.js script -->
+        <script src="https://vjs.zencdn.net/8.20.4/video.min.js"></script>
+        <div class="actions format-selector">
+          <span>Format:</span>
+          <label>
+            <input type="radio" name="export-format" value="gif" /> GIF
+          </label>
+          <label>
+            <input type="radio" name="export-format" value="mp4" /> MP4 (with sound)
+          </label>
+        </div>
+        <div id="export-status" class="status-row">
+          <div id="loading-indicator" class="loading-indicator hidden" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span>
+            Generating clip… (could take up to 10 seconds)
+          </div>
+          <div id="export-link"></div>
+        </div>
+      </section>
+
+      <section class="player-card">
+        <h2>Indexed shows</h2>
+        <div id="indexed-shows">Loading shows…</div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
